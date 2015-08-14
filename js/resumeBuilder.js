@@ -12,14 +12,14 @@ var bio = {
 		"email" : "honu.menehune@gmail.com",
 		"github" : "https://github.com/honu12",
 		"twitter" : "@Honu12mene",
-		"location" : "Hawaii"
+		"location" : "Honolulu, HI"
 	},
-	"welcomeMessage" : "There are some Hawaiian legends which said that turtles were the first to guide the Polynesians to the Hawaiian islands, while other myths attribute that to the golden plover.",
+	"welcomeMessage" : "There are some Hawaiian legends which said that turtles were the first to guide the Polynesians to the Hawaiian islands, while other myths attribute that to the golden plover. Nonetheless, there is a longstanding legend of a big green sea turtle, Kailua, who could turn itself into the form of a girl at will. In human form, she would look after the children playing on Punalu'u Beach.",
 	"skills" : ["HTML", "CSS", "Javascript", "JQuery", "PHP", "Python"],
 	"bioPic" : "images/turtle.jpg"
 }
 
-// Handler for the Bio Object
+// Handler for Bio Object
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -49,6 +49,26 @@ var formattedDates = HTMLworkDates.replace("%data%", work.dates);
 var formattedLocation = HTMLworkLocation.replace("%data%", work.location);
 var formattedDescription = HTMLworkDescription.replace("%data%", work.description);
 
+//Education Object
+
+var education = {
+	"school": {
+		"name": "University of Hawaii",
+		"major": "Computer Science",
+		"date": "2010 - 2014",
+		"city": "Honolulu, HI",
+		"degree": "BA",
+	}
+}
+
+// Handler for Education Object
+
+var formattedHTMLschoolName = HTMLschoolName.replace("%data%", education.school.name);
+var formattedHTMLschoolDegree = HTMLschoolDegree.replace("%data%", education.school.major);
+var formattedHTMLschoolDates = HTMLschoolDates.replace("%data%", education.school.date);
+var formattedHTMLschoolLocation = HTMLschoolLocation.replace("%data%", education.school.city);
+var formattedHTMLschoolMajor = HTMLschoolMajor.replace("%data%", education.school.degree);
+
 // Display Bio 
 
 $("#header").prepend(formattedRole);
@@ -62,7 +82,7 @@ for (var e in bio.skills) {
       $("#skills").append(formattedSkill);
     }
 
-// Display Work Eperience
+// Display Work
 
 $("#workExperience").append(HTMLworkStart);
 $("#workExperience").append(formattedEmployer);
@@ -70,3 +90,12 @@ $("#workExperience").append(formattedTitle);
 $("#workExperience").append(formattedDates);
 $("#workExperience").append(formattedLocation);
 $("#workExperience").append(formattedDescription);
+
+// Display Education
+
+$("#education").append(HTMLschoolStart);
+$("#education").append(formattedHTMLschoolName);
+$("#education").append(formattedHTMLschoolDegree);
+$("#education").append(formattedHTMLschoolDates);
+$("#education").append(formattedHTMLschoolLocation);
+$("#education").append(formattedHTMLschoolMajor);
