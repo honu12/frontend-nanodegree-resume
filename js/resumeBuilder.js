@@ -32,6 +32,19 @@ var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedSkill = HTMLskills.replace("%data%", bio.skills);
 
+// Display Bio 
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#topContacts").append(formattedMobile + formattedEmail + formattedGitHub + formattedTwitter + formattedLocation);
+$("#header").append(formattedBioPic);
+$("#header").append(formattedWelcomeMsg);
+$("#header").append(HTMLskillsStart);
+for (var e in bio.skills) {
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills[e]);
+      $("#skills").append(formattedSkill);
+    }
+
 // Work Object
 
 var work = {};
@@ -48,6 +61,15 @@ var formattedTitle = HTMLworkTitle.replace("%data%", work.title);
 var formattedDates = HTMLworkDates.replace("%data%", work.dates);
 var formattedLocation = HTMLworkLocation.replace("%data%", work.location);
 var formattedDescription = HTMLworkDescription.replace("%data%", work.description);
+
+// Display Work
+
+$("#workExperience").append(HTMLworkStart);
+$("#workExperience").append(formattedEmployer);
+$("#workExperience").append(formattedTitle);
+$("#workExperience").append(formattedDates);
+$("#workExperience").append(formattedLocation);
+$("#workExperience").append(formattedDescription);
 
 //Education Object
 
@@ -69,6 +91,15 @@ var formattedHTMLschoolDates = HTMLschoolDates.replace("%data%", education.schoo
 var formattedHTMLschoolLocation = HTMLschoolLocation.replace("%data%", education.schools.city);
 var formattedHTMLschoolMajor = HTMLschoolMajor.replace("%data%", education.schools.degree);
 
+// Display Education
+
+$("#education").append(HTMLschoolStart);
+$("#education").append(formattedHTMLschoolName);
+$("#education").append(formattedHTMLschoolDegree);
+$("#education").append(formattedHTMLschoolDates);
+$("#education").append(formattedHTMLschoolLocation);
+$("#education").append(formattedHTMLschoolMajor);
+
 // Online Object
 
 var online = {
@@ -89,37 +120,6 @@ var formattedHTMLonlineSchool = HTMLonlineSchool.replace("%data%", online.learni
 var formattedHTMLonlineDates = HTMLonlineDates.replace("%data%", online.learning.date);
 var formattedHTMLonlineURL = HTMLonlineURL.replace("%data%", online.learning.url);
 
-// Display Bio 
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#topContacts").append(formattedMobile + formattedEmail + formattedGitHub + formattedTwitter + formattedLocation);
-$("#header").append(formattedBioPic);
-$("#header").append(formattedWelcomeMsg);
-$("#header").append(HTMLskillsStart);
-for (var e in bio.skills) {
-      var formattedSkill = HTMLskills.replace("%data%", bio.skills[e]);
-      $("#skills").append(formattedSkill);
-    }
-
-// Display Work
-
-$("#workExperience").append(HTMLworkStart);
-$("#workExperience").append(formattedEmployer);
-$("#workExperience").append(formattedTitle);
-$("#workExperience").append(formattedDates);
-$("#workExperience").append(formattedLocation);
-$("#workExperience").append(formattedDescription);
-
-// Display Education
-
-$("#education").append(HTMLschoolStart);
-$("#education").append(formattedHTMLschoolName);
-$("#education").append(formattedHTMLschoolDegree);
-$("#education").append(formattedHTMLschoolDates);
-$("#education").append(formattedHTMLschoolLocation);
-$("#education").append(formattedHTMLschoolMajor);
-
 //Display Online
 
 $("#education").append(formattedHTMLonlineClasses);
@@ -127,3 +127,4 @@ $("#education").append(formattedHTMLonlineTitle);
 $("#education").append(formattedHTMLonlineSchool);
 $("#education").append(formattedHTMLonlineDates);
 $("#education").append(formattedHTMLonlineURL);
+
