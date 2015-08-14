@@ -38,7 +38,7 @@ var work = {};
 work.employer = "Independent Contractor";
 work.title = "Web Developer";
 work.dates = "3 years";
-work.location = "Hawaii";
+work.location = "Honolulu, HI";
 work.description = "Just crawling around";
 
 // Handler for Work Object
@@ -52,7 +52,7 @@ var formattedDescription = HTMLworkDescription.replace("%data%", work.descriptio
 //Education Object
 
 var education = {
-	"school": {
+	"schools": {
 		"name": "University of Hawaii",
 		"major": "Computer Science",
 		"date": "2010 - 2014",
@@ -63,11 +63,31 @@ var education = {
 
 // Handler for Education Object
 
-var formattedHTMLschoolName = HTMLschoolName.replace("%data%", education.school.name);
-var formattedHTMLschoolDegree = HTMLschoolDegree.replace("%data%", education.school.major);
-var formattedHTMLschoolDates = HTMLschoolDates.replace("%data%", education.school.date);
-var formattedHTMLschoolLocation = HTMLschoolLocation.replace("%data%", education.school.city);
-var formattedHTMLschoolMajor = HTMLschoolMajor.replace("%data%", education.school.degree);
+var formattedHTMLschoolName = HTMLschoolName.replace("%data%", education.schools.name);
+var formattedHTMLschoolDegree = HTMLschoolDegree.replace("%data%", education.schools.major);
+var formattedHTMLschoolDates = HTMLschoolDates.replace("%data%", education.schools.date);
+var formattedHTMLschoolLocation = HTMLschoolLocation.replace("%data%", education.schools.city);
+var formattedHTMLschoolMajor = HTMLschoolMajor.replace("%data%", education.schools.degree);
+
+// Online Object
+
+var online = {
+	"learning": {
+		"classes": "?",
+		"title": "Frontend Developer Nanodegree",
+		"school": "Udacity",
+		"date": "2014 - present",
+		"url" : "https://www.udacity.com/"
+	}
+}
+
+// Handler for Online Object
+
+var formattedHTMLonlineClasses = HTMLonlineClasses.replace("%data%", online.learning.classes);
+var formattedHTMLonlineTitle = HTMLonlineTitle.replace("%data%", online.learning.title);
+var formattedHTMLonlineSchool = HTMLonlineSchool.replace("%data%", online.learning.school);
+var formattedHTMLonlineDates = HTMLonlineDates.replace("%data%", online.learning.date);
+var formattedHTMLonlineURL = HTMLonlineURL.replace("%data%", online.learning.url);
 
 // Display Bio 
 
@@ -99,3 +119,11 @@ $("#education").append(formattedHTMLschoolDegree);
 $("#education").append(formattedHTMLschoolDates);
 $("#education").append(formattedHTMLschoolLocation);
 $("#education").append(formattedHTMLschoolMajor);
+
+//Display Online
+
+$("#education").append(formattedHTMLonlineClasses);
+$("#education").append(formattedHTMLonlineTitle);
+$("#education").append(formattedHTMLonlineSchool);
+$("#education").append(formattedHTMLonlineDates);
+$("#education").append(formattedHTMLonlineURL);
